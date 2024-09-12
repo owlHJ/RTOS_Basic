@@ -1,5 +1,6 @@
 #include "stdint.h"
 #include "HalUart.h"
+#include "stdbool.h"
 
 #include "stdio.h"
 
@@ -25,18 +26,12 @@ void main(void)
 
     Printf_test();
 
-    i = 100;
-    
-    while(i--)
-    {
-        uint8_t ch = Hal_uart_get_char();
-        Hal_uart_put_char(ch);
-    }
-    // uint32_t* dummyAddr = (uint32_t*)(1024*1024*100);
-    // *dummyAddr = sizeof(long);
+    while(true);
+
 }
 static void Hw_Init(void)
 {
+    Hal_interrupt_init();
     Hal_uart_init();
 }
 static void Printf_test(void)
