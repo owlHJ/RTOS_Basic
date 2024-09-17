@@ -6,3 +6,6 @@ vscode :
 Beyond Compare:
 Terminator :
 stm32F103RB
+
+cmd : qemu-system-arm -M realview-pb-a8 -kernel build/navilos.axf -nographic
+bcompare ~/path1 ~/path2
