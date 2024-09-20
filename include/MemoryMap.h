@@ -1,3 +1,12 @@
+/**
+ * @file MemoryMap.h
+ * @author hjkim <rlaguswns901@gmail.com>
+ * @brief 
+ * @version 0.1
+ * @date 2024-09-19
+ * 
+ * @copyright Copyright (c) 2024
+ */
 #define INST_ADDR_START     0
 #define USRSYS_STACK_START  0x00100000
 #define SVC_STACK_START     0x00300000

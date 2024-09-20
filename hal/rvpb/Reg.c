@@ -1,10 +1,12 @@
-/*
- * Regs.c
- *
- *  Created on: Sep 8, 2018
- *      Author: maanu
+/**
+ * @file Reg.c
+ * @author hjkim <rlaguswns901@gmail.com>
+ * @brief 
+ * @version 0.1
+ * @date 2024-09-19
+ * 
+ * @copyright Copyright (c) 2024
  */
-
 #include "stdint.h"
 #include "Uart.h"
 #include "Timer.h"

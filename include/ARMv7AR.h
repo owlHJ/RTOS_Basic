@@ -1,3 +1,12 @@
+/**
+ * @file ARMv7AR.h
+ * @author hjkim <rlaguswns901@gmail.com>
+ * @brief 
+ * @version 0.1
+ * @date 2024-09-19
+ * 
+ * @copyright Copyright (c) 2024
+ */
 /* PSR Mode Bit Values */
 #define ARM_MODE_BIT_USR 0x10
 #define ARM_MODE_BIT_FIQ 0x11

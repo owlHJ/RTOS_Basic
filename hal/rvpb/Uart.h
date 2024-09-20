@@ -1,10 +1,12 @@
-/*
- * Uart.h
- *
- *  Created on: Sep 8, 2018
- *      Author: maanu
+/**
+ * @file Uart.h
+ * @author hjkim <rlaguswns901@gmail.com>
+ * @brief 
+ * @version 0.1
+ * @date 2024-09-19
+ * 
+ * @copyright Copyright (c) 2024
  */
-
 #ifndef HAL_RVPB_UART_H_
 #define HAL_RVPB_UART_H_
 #include "stdint.h"

@@ -1,12 +1,14 @@
-/*
- * Interrupt.h
- *
- *  Created on: Sep 21, 2018
- *      Author: maanu
- */
-
 #ifndef HAL_RVPB_INTERRUPT_H_
 #define HAL_RVPB_INTERRUPT_H_
+/**
+ * @file Interrupt.h
+ * @author hjkim <rlaguswns901@gmail.com>
+ * @brief 
+ * @version 0.1
+ * @date 2024-09-19
+ * 
+ * @copyright Copyright (c) 2024
+ */
 
 #include "armcpu.h"
 

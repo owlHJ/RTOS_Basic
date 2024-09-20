@@ -1,10 +1,12 @@
-/*
- * HalUart.h
- *
- *  Created on: Sep 8, 2018
- *      Author: maanu
+/**
+ * @file HalUart.h
+ * @author hjkim <rlaguswns901@gmail.com>
+ * @brief 
+ * @version 0.1
+ * @date 2024-09-19
+ * 
+ * @copyright Copyright (c) 2024
  */
-
 #ifndef HAL_HALUART_H_
 #define HAL_HALUART_H_
 #include "stdint.h"
