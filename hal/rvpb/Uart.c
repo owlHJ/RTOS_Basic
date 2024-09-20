@@ -12,7 +12,7 @@
 #include "Uart.h"
 #include "HalUart.h"
 #include "HalInterrupt.h"
-#include "HalInterrupt.h"
+#include "event.h"
 
 // #include "Kernel.h"
 
@@ -64,6 +64,8 @@ static void interrupt_handler(void)
 {
     uint8_t ch = Hal_uart_get_char();
     Hal_uart_put_char(ch);
+
+    Kernel_send_events(KernelEventFlag_UartIn);
 }
 // static void interrupt_handler(void)
 // {
