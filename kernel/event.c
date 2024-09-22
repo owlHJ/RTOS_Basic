@@ -7,10 +7,10 @@
  * 
  * @copyright Copyright (c) 2024
  */
+
 #include "stdint.h"
 #include "stdbool.h"
 
-#include "stdio.h"
 #include "event.h"
 
 static uint32_t sEventFlag;
@@ -29,13 +29,10 @@ void Kernel_event_flag_clear(KernelEventFlag_t event)
 }
 bool Kernel_event_flag_check(KernelEventFlag_t event)
 {
-    bool bRet = false;
-
-    if(sEventFlag * (uint32_t)event)
+    if (sEventFlag & (uint32_t)event)
     {
         Kernel_event_flag_clear(event);
-        bRet = true;
+        return true;
     }
-
-    return bRet;
+    return false;
 }

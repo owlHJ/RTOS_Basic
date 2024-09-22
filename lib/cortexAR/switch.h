@@ -1,12 +1,10 @@
-/**
- * @file switch.h
- * @author hjkim <rlaguswns901@gmail.com>
- * @brief 
- * @version 0.1
- * @date 2024-09-19
- * 
- * @copyright Copyright (c) 2024
+/*
+ * switch.h
+ *
+ *  Created on: Jan 29, 2019
+ *      Author: maanu
  */
+
 #ifndef LIB_CORTEXM_SWITCH_H_
 #define LIB_CORTEXM_SWITCH_H_
 

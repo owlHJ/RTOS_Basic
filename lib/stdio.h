@@ -7,14 +7,15 @@
  * 
  * @copyright Copyright (c) 2024
  */
+
 #ifndef LIB_STDIO_H_
-#define LTB_STDIO_H_
+#define LIB_STDIO_H_
 
 #include "stdarg.h"
 
 typedef enum utoa_t
 {
-    utoa_dec =10,
+    utoa_dec = 10,
     utoa_hex = 16,
 } utoa_t;
 

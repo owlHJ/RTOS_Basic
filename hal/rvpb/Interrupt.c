@@ -21,26 +21,24 @@ static InterHdlr_fptr sHandlers[INTERRUPT_HANDLER_NUM];
 void Hal_interrupt_init(void)
 {
     GicCpu->cpucontrol.bits.Enable          = 1;
-    GicCpu->prioritymask.bits.Prioritymask  = GIC_PRIORITY_MASK_NONE;
+    GicCpu->prioritymask.bits.Prioritymask   = GIC_PRIORITY_MASK_NONE;
     GicDist->distributorctrl.bits.Enable     = 1;
 
-    for(uint32_t i =0; i <INTERRUPT_HANDLER_NUM; ++i)
+    for (uint32_t i = 0 ; i < INTERRUPT_HANDLER_NUM ; i++)
     {
         sHandlers[i] = NULL;
     }
 
     enable_irq();
-
-    return;
 }
 void Hal_interrupt_enable(uint32_t interrupt_num)
 {
-    uint32_t bit_num = interrupt_num - GIC_IRQ_START;
-
-    if((interrupt_num < GIC_IRQ_START) || (GIC_IRQ_END < interrupt_num))
+    if ((interrupt_num < GIC_IRQ_START) || (GIC_IRQ_END < interrupt_num))
     {
-        return; 
+        return;
     }
+
+    uint32_t bit_num = interrupt_num - GIC_IRQ_START;
 
     if (bit_num < GIC_IRQ_START)
     {
@@ -54,17 +52,17 @@ void Hal_interrupt_enable(uint32_t interrupt_num)
 
     return;
 }
-void Hal_intterupt_disable(uint32_t interrupt_num)
+
+void Hal_interrupt_disable(uint32_t interrupt_num)
 {
-    if((interrupt_num < GIC_IRQ_START) || (GIC_IRQ_END < interrupt_num))
+    if ((interrupt_num < GIC_IRQ_START) || (GIC_IRQ_END < interrupt_num))
     {
         return;
     }
 
     uint32_t bit_num = interrupt_num - GIC_IRQ_START;
 
-    //bit_num = (bit_num < GIC_IRQ_START) ? CLR_BIT(GicDist->setenable1, bit_num) : bit_num -=GIC_IRQ_START,CLR_BIT(GicDist->setenable2, bit_num);
-    if(bit_num < GIC_IRQ_START) 
+    if (bit_num < GIC_IRQ_START)
     {
         CLR_BIT(GicDist->setenable1, bit_num);
     }
@@ -73,25 +71,21 @@ void Hal_intterupt_disable(uint32_t interrupt_num)
         bit_num -= GIC_IRQ_START;
         CLR_BIT(GicDist->setenable2, bit_num);
     }
-
-    return;
 }
+
 void Hal_interrupt_register_handler(InterHdlr_fptr handler, uint32_t interrupt_num)
 {
     sHandlers[interrupt_num] = handler;
-
-    return;
 }
+
 void Hal_interrupt_run_handler(void)
 {
     uint32_t interrupt_num = GicCpu->interruptack.bits.InterruptID;
 
-    if(sHandlers[interrupt_num] != NULL)
+    if (sHandlers[interrupt_num] != NULL)
     {
         sHandlers[interrupt_num]();
     }
 
     GicCpu->endofinterrupt.bits.InterruptID = interrupt_num;
-
-    return;
 }

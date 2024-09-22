@@ -134,6 +134,4 @@ typedef struct GicDist_t
 #define GIC_IRQ_START           32
 #define GIC_IRQ_END             95
 
-
-
 #endif /* HAL_RVPB_INTERRUPT_H_ */

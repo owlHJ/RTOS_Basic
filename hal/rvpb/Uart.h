@@ -7,9 +7,9 @@
  * 
  * @copyright Copyright (c) 2024
  */
+
 #ifndef HAL_RVPB_UART_H_
 #define HAL_RVPB_UART_H_
-#include "stdint.h"
 
 typedef union UARTDR_t
 {

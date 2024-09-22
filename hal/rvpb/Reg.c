@@ -9,9 +9,8 @@
  */
 #include "stdint.h"
 #include "Uart.h"
-#include "Timer.h"
 #include "Interrupt.h"
-//#include "Timer.h"
+#include "Timer.h"
 
 
 volatile PL011_t*   Uart    = (PL011_t*)UART_BASE_ADDRESS0;
